@@ -103,47 +103,56 @@ $(".category-children").on("click", function() {
     var $techInfoWrapper = $(".tech-info-wrapper");
     var $infoDivs = $techInfoWrapper.children("div");
     var $projectCards = $(".project-card");
-  
+
     if (!$clicked.hasClass("active")) {
-      $(".category-children").removeClass("active");
-      $clicked.addClass("active");
-  
-      var infoArray = [
+    $(".category-children").removeClass("active");
+    $clicked.addClass("active");
+
+    var infoArray = [
         $clicked.data("info-1"),
         $clicked.data("info-2"),
         $clicked.data("info-3")
-      ];
-      $infoDivs.each(function(index) {
+    ];
+    $infoDivs.each(function(index) {
         $(this).html(infoArray[index] || "");
-      });
-      $techInfoWrapper.addClass("active");
-  
-      var parentCategory = $clicked.closest(".filter-category")
+    });
+    $techInfoWrapper.addClass("active");
+
+    var parentCategory = $clicked.closest(".filter-category")
         .find(".category-parent")
         .text()
         .trim()
         .toLowerCase();
-      var subCategory = $clicked.text().trim().toLowerCase();
-  
-      $projectCards.each(function() {
+    var subCategory = $clicked.text().trim().toLowerCase();
+
+    $projectCards.each(function() {
         var $card = $(this);
         var cardCategory = $card.data("project-category").toString().toLowerCase();
-  
+
         var cardStackStr = $card.data("project-stack").toString().toLowerCase();
         var stacks = cardStackStr.split(",").map(function(s) { return s.trim(); });
-  
+
         if (cardCategory === parentCategory && stacks.indexOf(subCategory) !== -1) {
-          $card.show();
+        $card.show();
         } else {
-          $card.hide();
+        $card.hide();
         }
-      });
+    });
     } else {
-      $(".category-children").removeClass("active");
-      $techInfoWrapper.removeClass("active");
-      $projectCards.show();
+    $(".category-children").removeClass("active");
+    $techInfoWrapper.removeClass("active");
+    $projectCards.show();
     }
-  });
-  
-  
+});
+
+
+
+
+
+/*---------- Services Page Start ----------*/
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto',  // Auto width for each slide
+    spaceBetween: 20,       // Adjust space between slides as needed
+    freeMode: true,         // Enable free scrolling mode
+});
   
