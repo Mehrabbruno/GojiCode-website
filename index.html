@@ -6,10 +6,9 @@
     <title>Homepage</title>
 
     <link rel="stylesheet" href="public/scss/style.css">
-    <!-- <link rel="stylesheet" href="public/assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="public/assets/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="public/assets/fontawesome/css/light.min.css">
-    <link rel="stylesheet" href="public/assets/fontawesome/css/solid.min.css">
-    <link rel="stylesheet" href="public/assets/fontawesome/css/duotone-light.min.css"> -->
+    <link rel="stylesheet" href="public/assets/fontawesome/css/sharp-light.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 </head>
@@ -21,17 +20,16 @@
     <!-- Navbar Start -->
     <div class="top-nav">
         <div class="nav-main">
-            <div class="gojicode-logo">Goji Code</div>
-            <div class="nav-items-toggle">X</div>
+            <div class="gojicode-logo"><a href="/index.html">Goji Code</a></div>
+            <div class="nav-items-toggle"><i class="fa-sharp fa-light fa-bars"></i></div>
         </div>
 
         <div class="nav-items-container">
-            <div class="gojicode-logo">Goji Code</div>
+            <div class="gojicode-logo"><a href="/index.html">Goji Code</a></div>
             <div class="page-links">
-                <div class="nav-item">TECHNOLOGIEN</div>
-                <div class="nav-item">PROZES</div>
-                <div class="nav-item">PORTFOLIO</div>
-                <div class="nav-item">SERVICES</div>
+                <div class="nav-item"><a href="technologien.html">TECHNOLOGIEN</a></div>
+                <div class="nav-item"><a href="portfolio.html">PORTFOLIO</a></div>
+                <div class="nav-item"><a href="services.html">SERVICES</a></div>
             </div>
             <div class="cta-container">
                 <div class="lang-container">
@@ -92,133 +90,162 @@
                     </div>
                     <div class="btn-regular">
                         <span>Finde heraus wie dein <br>Projekt ein Standout wird </span>
-                        <i>></i>
+                        <i class="fa-sharp fa-light fa-arrow-right"></i>
                     </div>
 
                 </div>
             </div>
-
-            <div class="match-test-section page-section scroll-section" data-theme="dark">
+            
+            <div class="match-test-section page-section scroll-section" style="margin-top: 10px;" data-theme="dark">
 
                 <div class="form-steps-container">
-                    <div class="form-step">
+                    <div class="form-step" data-match-category="company-type">
                         <div class="section">
-                            <div class="header">Get Your Quote</div>
-                            <div class="desc">We evaluate your requirements and criteria and suggest you the perfect fit</div>
+                            <div class="header">Select Your Company</div>
+                            <div class="desc">Please choose the company type that best describes your business.</div>
                         </div>
                         <div class="form-inputs-container">
                             <div class="form-input">
-                                <div class="icon">x</div>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
                                 <span>STARTUP</span>
                             </div>
                             <div class="form-input">
-                                <div class="icon">x</div>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
                                 <span>SBM</span>
                             </div>
                             <div class="form-input">
-                                <div class="icon">x</div>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
                                 <span>CONCERN</span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-step">
+                    <div class="form-step" data-match-category="targeted-platform">
                         <div class="section">
-                            <div class="header">Get Your Quote</div>
-                            <div class="desc">We evaluate your requirements and criteria and suggest you the perfect fit</div>
+                            <div class="header">Choose Your Platform</div>
+                            <div class="desc">Select the platform that you prefer for your project.</div>
                         </div>
+                          
                         <div class="form-inputs-container">
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>STARTUP</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>Mobile App</span>
                             </div>
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>SBM</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>Web Application</span>
                             </div>
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>CONCERN</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>Mobile + App</span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-step">
+                    <div class="form-step" data-match-category="design-state">
                         <div class="section">
-                            <div class="header">Get Your Quote</div>
-                            <div class="desc">We evaluate your requirements and criteria and suggest you the perfect fit</div>
-                        </div>
+                            <div class="header">Pick Your Design</div>
+                            <div class="desc">Decide whether you already have a design or need one created.</div>
+                        </div>                          
                         <div class="form-inputs-container">
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>STARTUP</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>No Design</span>
                             </div>
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>SBM</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>Design is ready</span>
                             </div>
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>CONCERN</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>Design not needed</span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-step">
+                    <div class="form-step" data-match-category="added-features">
                         <div class="section">
-                            <div class="header">Get Your Quote</div>
-                            <div class="desc">We evaluate your requirements and criteria and suggest you the perfect fit</div>
+                            <div class="header">Select Features</div>
+                            <div class="desc">Choose the features you'd like to include in your project.</div>
                         </div>
                         <div class="form-inputs-container">
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>STARTUP</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>Live Chat</span>
                             </div>
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>SBM</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>Push Notifications</span>
                             </div>
                             <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>CONCERN</span>
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>PDF Exports</span>
                             </div>
+                            <!-- <div class="form-input">
+                                <div class="icon"><i class="fa-sharp fa-light fa-xmark"></i></div>
+                                <span>Maps Integration</span>
+                            </div> -->
                         </div>
                     </div>
-                    <div class="form-step">
-                        <div class="section">
-                            <div class="header">Get Your Quote</div>
-                            <div class="desc">We evaluate your requirements and criteria and suggest you the perfect fit</div>
+                    <div class="form-step">                          
+                        <div class="title-wrapper">
+                            <div class="header">Review & Submit</div>
+                            <div class="btn-regular">SUBMIT</div>
                         </div>
                         <div class="form-inputs-container">
-                            <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>STARTUP</span>
+                            <div class="form-value" data-match-category="company-type">
+                                <div class="info-wrapper">
+                                    <div class="label">Company</div>
+                                    <div class="value">NON-SELECTED</div>
+                                </div>
+                                <div class="value-status">
+                                    <i class="fa-sharp fa-light fa-check"></i>
+                                </div>
                             </div>
-                            <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>SBM</span>
+                            <div class="form-value" data-match-category="targeted-platform">
+                                <div class="info-wrapper">
+                                    <div class="label">Platform</div>
+                                    <div class="value">NON-SELECTED</div>
+                                </div>
+                                <div class="value-status">
+                                    <i class="fa-sharp fa-light fa-check"></i>
+                                </div>
                             </div>
-                            <div class="form-input">
-                                <div class="icon">x</div>
-                                <span>CONCERN</span>
+                            <div class="form-value" data-match-category="design-state">
+                                <div class="info-wrapper">
+                                    <div class="label">Design</div>
+                                    <div class="value">NON-SELECTED</div>
+                                </div>
+                                <div class="value-status">
+                                    <i class="fa-sharp fa-light fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="form-value" data-match-category="added-features">
+                                <div class="info-wrapper">
+                                    <div class="label">Features</div>
+                                    <div class="value">NON-SELECTED</div>
+                                </div>
+                                <div class="value-status">
+                                    <i class="fa-sharp fa-light fa-check"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="pagination-container">
-                    <div class="pagination-left"> . </div>
+                    <div class="pagination-left"> <i class="fa-sharp fa-light fa-chevron-left"></i> </div>
                     <div class="pagination-step active">COMPANY SIZE</div>
                     <div class="pagination-step">PLATFORM</div>
                     <div class="pagination-step">DESIGN</div>
                     <div class="pagination-step">FEATURES</div>
                     <div class="pagination-step">YOUR QUOTE</div>
-                    <div class="pagination-right"> . </div>
+                    <div class="pagination-right"> <i class="fa-sharp fa-light fa-chevron-right"></i> </div>
                 </div>
             
             </div>
-
+            
             <div class="footer page-section scroll-section" data-theme="dark">
                 <div class="title">
                     CONTACT US & <br>LET'S GET STARTED
-                    <div class="icon-btn">m</div>
+                    <div class="icon-btn"><i class="fa-sharp fa-light fa-envelope"></i></div>
                 </div>
                 <div class="separator"></div>
                 <div class="links-container">
