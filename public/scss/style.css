@@ -1302,6 +1302,119 @@ a {
 }
 
 /* Portfolio End */
+/* Portfolio Page Start */
+.project-page .project-cover-section {
+  margin-top: 110px;
+  padding-inline: 20px;
+  transform: translateY(40px);
+}
+.project-page .project-cover-section .cover-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.project-page .project-cover-section .cover-wrapper .title {
+  font-size: 30px;
+}
+.project-page .project-cover-section .project-cover-image {
+  margin-top: 20px;
+  height: 300px;
+  width: 100%;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+.project-page .project-detail-wrapper {
+  background-color: var(--cl-7);
+}
+.project-page .project-detail-wrapper .project-info-container {
+  color: var(--cl-11);
+  font-size: 18px;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-inline: 20px;
+}
+.project-page .project-detail-wrapper .project-info-container .project-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.project-page .project-detail-wrapper .project-info-container .project-details-grid .project-data .sub-tite {
+  font-size: 12px;
+}
+.project-page .project-detail-wrapper .project-info-container .project-details-grid .project-data .title {
+  font-size: 28px;
+  color: var(--cl-14);
+}
+.project-page .project-detail-wrapper .images-container {
+  margin-top: 40px;
+}
+.project-page .project-detail-wrapper .images-container .project-image {
+  width: 250px;
+  aspect-ratio: 1/1.25;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.project-page .project-detail-wrapper .milestone-wrapper {
+  margin-top: 40px;
+  padding-inline: 20px;
+}
+.project-page .project-detail-wrapper .milestone-wrapper .title {
+  font-size: 30px;
+  color: var(--cl-14);
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper {
+  margin-top: 40px;
+  border-bottom: 1px solid var(--cl-8);
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid var(--cl-8);
+  color: var(--cl-10);
+  padding: 40px 0;
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 1;
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .title-section > div:nth-child(1) {
+  font-size: 24px;
+  color: var(--cl-14);
+  font-weight: 300;
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .title-section .sub-tite {
+  font-size: 18px;
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .title-section .price {
+  font-size: 24px;
+  color: var(--cl-14);
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .desc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .deliverables {
+  flex: 1;
+}
+.project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .deliverables ul {
+  padding: 15px;
+  margin: 0;
+}
+
+/* Portfolio Page End */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .cover-section img {
@@ -1422,6 +1535,37 @@ a {
     flex-direction: row;
     align-items: flex-end;
     margin-bottom: 20px;
+  }
+  .project-page .project-cover-section .cover-wrapper .title {
+    font-size: 48px;
+    font-weight: 300;
+  }
+  .project-page .project-cover-section .project-cover-image {
+    height: 500px;
+  }
+  .project-page .project-detail-wrapper .project-info-container {
+    flex-direction: row;
+  }
+  .project-page .project-detail-wrapper .project-info-container .project-description {
+    flex: 1;
+  }
+  .project-page .project-detail-wrapper .project-info-container .project-details-grid {
+    flex: 1;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .title {
+    font-size: 42px;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .title-section > div:nth-child(1) {
+    font-size: 32px;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .title-section .price {
+    font-size: 32px;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .desc {
+    font-size: 18px;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .deliverables {
+    font-size: 18px;
   }
 }
 /* Large devices (desktops, 992px and up) */
@@ -1618,7 +1762,6 @@ a {
     filter: brightness(1.2);
   }
   .footer {
-    min-height: 100vh;
     padding: 20px 60px;
     box-sizing: border-box;
   }
@@ -1641,6 +1784,9 @@ a {
   }
   .footer .links-container > div:nth-child(4) {
     display: block;
+  }
+  .footer.scroll-section {
+    min-height: 100vh;
   }
   .technologien-wrapper .cover {
     font-size: 58px;
@@ -1702,6 +1848,26 @@ a {
     font-size: 34px;
     font-weight: 400;
   }
+  .project-page .project-cover-section {
+    padding-inline: 60px;
+  }
+  .project-page .project-cover-section .cover-wrapper .title {
+    font-size: 48px;
+    font-weight: 300;
+  }
+  .project-page .project-cover-section .project-cover-image {
+    height: 600px;
+    border-radius: 8px;
+  }
+  .project-page .project-detail-wrapper .project-info-container {
+    padding-inline: 60px;
+  }
+  .project-page .project-detail-wrapper .project-info-container .project-description {
+    flex: 2;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper {
+    padding-inline: 60px;
+  }
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -1737,6 +1903,29 @@ a {
     font-size: 24px;
   }
   .team-section .team-right .description {
+    font-size: 18px;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .title {
+    font-size: 42px;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row {
+    padding: 20px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .title-section > div:nth-child(1) {
+    font-size: 32px;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .title-section .price {
+    font-size: 32px;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .desc {
+    font-size: 18px;
+    flex: 2;
+  }
+  .project-page .project-detail-wrapper .milestone-wrapper .milestone-table-wrapper .table-row .deliverables {
     font-size: 18px;
   }
 }

@@ -200,9 +200,9 @@ $(".packages-wrapper .services-category").on("click", function() {
 
 
 /*---------- Services Page Start ----------*/
-var swiper = new Swiper('.portfolio-section .projects-slider', {
+var swiper = new Swiper('.portfolio-section .projects-slider, .images-container', {
     slidesPerView: 'auto',
-    spaceBetween: 10,
+    spaceBetween: 20,
     freeMode: true,
     freeModeMomentum: false,
     speed: 4000,
