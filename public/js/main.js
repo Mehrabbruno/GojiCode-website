@@ -155,4 +155,106 @@ var swiper = new Swiper('.swiper-container', {
     spaceBetween: 20,       // Adjust space between slides as needed
     freeMode: true,         // Enable free scrolling mode
 });
-  
+
+$(".packages-wrapper .services-category").on("click", function() {
+    var $clicked = $(this);
+    var filter = $clicked.data("filter").toString().toLowerCase(); // e.g. "apps"
+    var $serviceCards = $(".service-card");
+
+    // If the clicked category is not active, apply the filter
+    if (!$clicked.hasClass("active")) {
+    // Remove 'active' from all categories, then add to the clicked one
+    $(".services-category").removeClass("active");
+    $clicked.addClass("active");
+
+    // Show/hide cards based on whether their data-category includes the filter
+    $serviceCards.each(function() {
+        var $card = $(this);
+        // Convert the card's categories into an array of trimmed, lowercase strings
+        var cardCategories = $card
+        .data("category")
+        .toString()
+        .toLowerCase()
+        .split(",")
+        .map(function(item) {
+            return item.trim();
+        });
+
+        // Show the card if it includes the selected filter; otherwise, hide it
+        if (cardCategories.includes(filter)) {
+        $card.show();
+        } else {
+        $card.hide();
+        }
+    });
+    } 
+    else {
+    // If the same category is clicked again, deactivate and show all cards
+    $clicked.removeClass("active");
+    $serviceCards.show();
+    }
+});  
+
+
+
+
+
+/*---------- Services Page Start ----------*/
+var swiper = new Swiper('.portfolio-section .projects-slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    freeMode: true,
+    freeModeMomentum: false,
+    speed: 4000,
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+});
+
+// When a project card is clicked, update the background image in section-3
+$('.projects-slider .project-card').on('click', function() {
+    $('.projects-slider .project-card').removeClass('active')
+    $(this).addClass('active')    
+    var bgUrl = $(this).data('bg');
+    $('.cover-section-wrapper .section-3').css('background-image', 'url(' + bgUrl + ')');
+});
+
+$(".project-grid-section .services-category").on("click", function() {
+    var $clicked = $(this);
+    var filter = $clicked.data("filter").toString().toLowerCase(); // e.g. "apps"
+    var $serviceCards = $(".project-grid .project-card");
+
+    // If the clicked category is not active, apply the filter
+    if (!$clicked.hasClass("active")) {
+    // Remove 'active' from all categories, then add to the clicked one
+    $(".services-category").removeClass("active");
+    $clicked.addClass("active");
+
+    // Show/hide cards based on whether their data-category includes the filter
+    $serviceCards.each(function() {
+        var $card = $(this);
+        // Convert the card's categories into an array of trimmed, lowercase strings
+        var cardCategories = $card
+        .data("category")
+        .toString()
+        .toLowerCase()
+        .split(",")
+        .map(function(item) {
+            return item.trim();
+        });
+
+        // Show the card if it includes the selected filter; otherwise, hide it
+        if (cardCategories.includes(filter)) {
+            $card.show();
+        } else {
+            $card.hide();
+        }
+    });
+    } 
+    else {
+    // If the same category is clicked again, deactivate and show all cards
+    $clicked.removeClass("active");
+    $serviceCards.show();
+    }
+});  

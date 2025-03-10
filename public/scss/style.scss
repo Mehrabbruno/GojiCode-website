@@ -883,6 +883,8 @@ a{
         display: flex;
         flex-direction: column;
         gap: 100px;
+        margin-bottom: 0px;
+        transition: .2s;
 
         .section{
             .title{
@@ -903,8 +905,18 @@ a{
             font-size: 18px;
             font-family: "Space Grotesk";
             color: var(--cl-10);
-            &.active{
-                color: var(--cl-14);
+
+            .services-category{
+                cursor: pointer;
+                transition: .2s;
+                filter: brightness(1);
+                &:hover{
+                    filter: brightness(1.2);
+                }
+                &.active{
+                    color: var(--ac-1);
+                    font-style: italic;
+                }
             }
         }
     }
@@ -1032,6 +1044,191 @@ a{
 
 
 
+/* Portfolio Start */
+.portfolio-section{
+    margin-top: 100px;
+
+    .cover-section-wrapper{
+        display: grid;
+        grid-template: 
+        "section-1 section-2"
+        "section-3 section-3";
+        gap: 20px;
+        font-size: 14px;
+        padding: 20px;
+
+        >div{
+            b{
+                color: var(--cl-1);
+            }
+        }
+
+        .section-1{
+            grid-area: section-1;
+            text-align: left;
+        }
+        .section-2{
+            text-align: right;
+            grid-area: section-2;
+            div{
+                cursor: pointer;
+                font-size: 12px;
+                text-decoration: underline;
+
+                &:hover{
+                    font-style: italic !important;
+                    b{font-style: italic !important;}
+                }
+            }
+        }
+        .section-3{
+            grid-area: section-3;
+            width: 100%;
+            aspect-ratio: 1/.75;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 10px;
+            transition: .2s;
+        }
+    }
+
+    .projects-slider{
+        height: max-content;
+        margin-top: 20px;
+        .project-card{
+            max-width: 200px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background-color: var(--cl-13);
+            cursor: pointer;
+            filter: brightness(1);
+            transition: .2s;
+            padding: 20px !important;
+            box-sizing: border-box;
+            border: 1px solid var(--cl-13);
+            &:hover{
+                filter: brightness(1.2);
+            }
+            &.active{
+                border: 1px solid var(--ac-1);
+                filter: brightness(1.1);
+            }
+            img{
+                width: 200px;
+            }
+        }
+    }
+
+    .project-grid-section{
+        background-color: var(--cl-7);
+        padding: 20px;
+        transition: .2s;
+        margin-top: 40px;
+
+        >.title-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            margin-top: 50px;
+            margin-bottom: 0px;
+            transition: .2s;
+    
+            .section{
+                .title{
+                    color: var(--cl-14);
+                    font-size: 28px;
+                    font-weight: 400;
+                }
+                .desc{
+                    margin-top: 10px;
+                    font-size: 16px;
+                    color: var(--cl-10);
+                }
+            }
+    
+            .services-filter-wrapper{
+                display: flex;
+                gap: 20px;
+                font-size: 18px;
+                font-family: "Space Grotesk";
+                color: var(--cl-10);
+    
+                .services-category{
+                    cursor: pointer;
+                    transition: .2s;
+                    filter: brightness(1);
+                    &:hover{
+                        filter: brightness(1.2);
+                    }
+                    &.active{
+                        color: var(--ac-1);
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        .project-grid{
+            margin-bottom: 40px;
+            margin-top: 40px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+
+            .project-card{
+                display: block;
+                background-position: center bottom;
+                background-size: cover !important;
+                background-repeat: no-repeat;
+                padding: 20px;
+                border-radius: 8px;
+                aspect-ratio: 1/.60;
+                background: var(--cl-13);
+                cursor: pointer;
+                transition: .2s;
+                position: relative;
+                &:hover{
+                    filter: brightness(1.05);
+                }
+                .title{
+                    font-size: 20px;
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    color: var(--cl-14);
+                    font-weight: 500;
+                }
+                .btn-circle{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 45px;
+                    height: 45px;
+                    font-size: 18px;
+                    border-radius: 40px;
+                    border: 1px solid var(--cl-11);
+                    color: var(--cl-11);
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    right: 20px;
+                    top: 20px;
+                    transition: .2s;
+                }
+            }
+        }
+    }
+
+}
+/* Portfolio End */
+
+
+
+
+
 
 
 
@@ -1047,6 +1244,13 @@ a{
     .team-section{
         .team-left, .team-right{
             width: 75%;
+        }
+    }
+    .portfolio-section{
+        .cover-section-wrapper{
+            .section-3{
+                aspect-ratio: 1/.5;
+            }
         }
     }
 }
@@ -1144,6 +1348,44 @@ a{
                 display: grid !important;
                 grid-template-columns: 1fr 1fr 1fr !important;
                 gap: 40px !important;
+            }
+        }
+    }
+
+    .packages-wrapper{
+        >.title-wrapper{
+            flex-direction: row;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+    }
+
+    .portfolio-section{
+        .cover-section-wrapper{
+            display: flex;
+            align-items: center;
+            >div{
+                flex: 1;
+                font-size: 30px;
+                color: var(--cl-10);
+                font-weight: 300;
+            }
+            .section-2{
+                order: 3;
+                div{
+                    font-size: 22px;
+                }
+            }
+            .section-3{
+                order: 2;
+                flex: 2;
+            }
+        }
+        .project-grid-section{
+            >.title-wrapper{
+                flex-direction: row;
+                align-items: flex-end;
+                margin-bottom: 20px;
             }
         }
     }
@@ -1382,6 +1624,22 @@ a{
 
     .packages-wrapper{
         padding-inline: 60px;
+
+        >.title-wrapper{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            .section{
+                max-width: 400px;
+                .title{
+                    color: var(--cl-14);
+                    font-size: 34px;
+                    font-weight: 400;
+                }
+            }
+        }
+
         .package-table-wrapper{
             >.title{
                 margin-bottom: 100px;
@@ -1403,6 +1661,28 @@ a{
                         ul{
                             margin-top: 0 !important;
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    .portfolio-section{
+        .project-grid-section{
+            padding-top: 100px !important;
+            padding-inline: 60px;
+            margin-top: 100px;
+            >.title-wrapper{
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 40px;
+                .section{
+                    max-width: 400px;
+                    .title{
+                        color: var(--cl-14);
+                        font-size: 34px;
+                        font-weight: 400;
                     }
                 }
             }
