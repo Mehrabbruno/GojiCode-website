@@ -18,7 +18,7 @@
     
 
     <!-- Navbar Start -->
-    <div class="top-nav">
+    <div class="top-nav scrolled">
         <div class="nav-main">
             <div class="gojicode-logo"><a href="/index.html">Goji Code</a></div>
             <div class="nav-items-toggle"><i class="fa-sharp fa-light fa-bars"></i></div>
@@ -52,66 +52,64 @@
                     <div class="title">Packages</div>
                     <div class="desc">Custom Solutions Taliored to your needs. Wir entwickeln individuelle Apps, die genau passen und deine Ziele erreichen</div>
                 </div>
-                <div class="services-filter-wrapper">
-                    <div class="services-category" data-filter="apps">APPS</div>
-                    <div class="services-category" data-filter="web">WEB</div>
-                    <div class="services-category" data-filter="api">API</div>
-                    <div class="services-category" data-filter="ecom">ECOM</div>
-                    <div class="services-category" data-filter="design">DESIGN</div>
-                </div>
             </div>
 
             <div class="swiper-container">
                 <div class="swiper-wrapper services-packges-wrapper">
-                    <div class="swiper-slide service-card" data-category="design, web, apps">
+                    <a href="#package-table-wrapper" class="swiper-slide service-card category-toggle" data-filter="apps">
                         <div class="title-wrapper">
-                            <div class="title">Figma Design</div>
+                            <div class="title">App</div>
                             <div class="price">2999€ - 4999€</div>
                         </div>
                         <div class="desc">Send us a message with details about your project!</div>
-                    </div>
-                    <div class="swiper-slide service-card" data-category="api">
+                    </a>
+                    <a href="#package-table-wrapper" class="swiper-slide service-card category-toggle" data-filter="design">
                         <div class="title-wrapper">
-                            <div class="title">API Integration </div>
+                            <div class="title">Design</div>
                             <div class="price">2999€ - 4999€</div>
                         </div>
                         <div class="desc">Let's get into the details together - for free</div>
-                    </div>
-                    <div class="swiper-slide service-card" data-category="design, web, apps">
+                    </a>
+                    <a href="#package-table-wrapper" class="swiper-slide service-card category-toggle" data-filter="web">
                         <div class="title-wrapper">
-                            <div class="title">Figma Design </div>
+                            <div class="title">Web</div>
                             <div class="price">2999€ - 4999€</div>
                         </div>
                         <div class="desc">We send you an detailed offer for the first milestone.</div>
-                    </div>
-                    <div class="swiper-slide service-card" data-category="web">
+                    </a>
+                    <a href="#package-table-wrapper" class="swiper-slide service-card category-toggle" data-filter="ecom">
                         <div class="title-wrapper">
-                            <div class="title">Web Development</div>
+                            <div class="title">Ecom</div>
                             <div class="price">2999€ - 4999€</div>
                         </div>
                         <div class="desc">We will create a design fully aligned with your vision</div>
-                    </div>
-                    <div class="swiper-slide service-card" data-category="apps">
+                    </a>
+                    <a href="#package-table-wrapper" class="swiper-slide service-card category-toggle" data-filter="maintenance">
                         <div class="title-wrapper">
-                            <div class="title">App Development</div>
+                            <div class="title">Maintenance</div>
                             <div class="price">2999€ - 4999€</div>
                         </div>
                         <div class="desc">The development will start following the finalized design</div>
-                    </div>
-                    <div class="swiper-slide service-card" data-category="web, api, ecom">
-                        <div class="title-wrapper">
-                            <div class="title">Backend Development</div>
-                            <div class="price">2999€ - 4999€</div>
-                        </div>
-                        <div class="desc">It’s not done until you’re satisfied with the result.</div>
-                    </div>
+                    </a>
                 </div>
             </div>
   
-            <div class="package-table-wrapper">
-                <div class="title">Base Packages Or <span>Custom</span> Tailored</div>
+            <div id="package-table-wrapper" class="package-table-wrapper">
+                
+                <div class="title-wrapper">
+                    <div class="title">Base Packages Or <span>Custom</span> Tailored</div>
+                    <div class="services-filter-wrapper">
+                        <div class="services-category category-toggle" data-filter="apps">APPS</div>
+                        <div class="services-category category-toggle" data-filter="design">DESIGN</div>
+                        <div class="services-category category-toggle" data-filter="web">WEB</div>
+                        <div class="services-category category-toggle" data-filter="ecom">ECOM</div>
+                        <div class="services-category category-toggle" data-filter="maintenance">MAINTENANCE</div>
+                    </div>
+                </div>
+                
                 <div class="table-wrapper">
-                    <div class="package-card">
+                    
+                    <div class="package-card" data-category="apps">
                         
                         <div class="package-info-wrapper">
                             <div class="package-name">MVP</div>
@@ -140,7 +138,7 @@
 
                         </div>
                     </div>
-                    <div class="package-card">
+                    <div class="package-card" data-category="apps">
                         <div class="package-info-wrapper">
                             <div class="package-name">Scalable</div>
                             <div class="price-wrapper">
@@ -169,13 +167,549 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="package-card" data-category="apps">
+                        
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Expension</div>
+                            <div class="price-wrapper">
+                                <div class="label">Starting From</div>
+                                <div class="price">2k €</div>
+                            </div>
+                        </div>
+
+                        <div class="package-desc">
+                            Launch your app in no time!<br>
+                            An MVP brings your idea to life, serving as the foundation for fundraising and user feedback. Accelerate your go-to-market with FlutterFlow.
+                        </div>
+                        <div class="feature-wrapper">
+
+                            <ul>
+                                <li>Fastest Choice</li>
+                                <li>Small Cost - Big Outcome</li>
+                                <li>Full Flutter Flow or Basic Flutter</li>
+                            </ul>
+
+                            <ul>
+                                <li>Firebase</li>
+                                <li>APK</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="apps">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">LLM App</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="apps">
+                        
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Acceleratetion & Takeover</div>
+                            <div class="price-wrapper">
+                                <div class="label">Starting From</div>
+                                <div class="price">2k €</div>
+                            </div>
+                        </div>
+
+                        <div class="package-desc">
+                            Launch your app in no time!<br>
+                            An MVP brings your idea to life, serving as the foundation for fundraising and user feedback. Accelerate your go-to-market with FlutterFlow.
+                        </div>
+                        <div class="feature-wrapper">
+
+                            <ul>
+                                <li>Fastest Choice</li>
+                                <li>Small Cost - Big Outcome</li>
+                                <li>Full Flutter Flow or Basic Flutter</li>
+                            </ul>
+
+                            <ul>
+                                <li>Firebase</li>
+                                <li>APK</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="package-card" data-category="design">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Prototype</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="design">
+                        
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Unicorn</div>
+                            <div class="price-wrapper">
+                                <div class="label">Starting From</div>
+                                <div class="price">2k €</div>
+                            </div>
+                        </div>
+
+                        <div class="package-desc">
+                            Launch your app in no time!<br>
+                            An MVP brings your idea to life, serving as the foundation for fundraising and user feedback. Accelerate your go-to-market with FlutterFlow.
+                        </div>
+                        <div class="feature-wrapper">
+
+                            <ul>
+                                <li>Fastest Choice</li>
+                                <li>Small Cost - Big Outcome</li>
+                                <li>Full Flutter Flow or Basic Flutter</li>
+                            </ul>
+
+                            <ul>
+                                <li>Firebase</li>
+                                <li>APK</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="package-card" data-category="web">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Lowcode MVP</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="web">
+                        
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Scalable</div>
+                            <div class="price-wrapper">
+                                <div class="label">Starting From</div>
+                                <div class="price">2k €</div>
+                            </div>
+                        </div>
+
+                        <div class="package-desc">
+                            Launch your app in no time!<br>
+                            An MVP brings your idea to life, serving as the foundation for fundraising and user feedback. Accelerate your go-to-market with FlutterFlow.
+                        </div>
+                        <div class="feature-wrapper">
+
+                            <ul>
+                                <li>Fastest Choice</li>
+                                <li>Small Cost - Big Outcome</li>
+                                <li>Full Flutter Flow or Basic Flutter</li>
+                            </ul>
+
+                            <ul>
+                                <li>Firebase</li>
+                                <li>APK</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="web">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Expansion</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="web">
+                        
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Extension to Mobile</div>
+                            <div class="price-wrapper">
+                                <div class="label">Starting From</div>
+                                <div class="price">2k €</div>
+                            </div>
+                        </div>
+
+                        <div class="package-desc">
+                            Launch your app in no time!<br>
+                            An MVP brings your idea to life, serving as the foundation for fundraising and user feedback. Accelerate your go-to-market with FlutterFlow.
+                        </div>
+                        <div class="feature-wrapper">
+
+                            <ul>
+                                <li>Fastest Choice</li>
+                                <li>Small Cost - Big Outcome</li>
+                                <li>Full Flutter Flow or Basic Flutter</li>
+                            </ul>
+
+                            <ul>
+                                <li>Firebase</li>
+                                <li>APK</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="package-card" data-category="ecom">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Basic</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="ecom">
+                        
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Advanced</div>
+                            <div class="price-wrapper">
+                                <div class="label">Starting From</div>
+                                <div class="price">2k €</div>
+                            </div>
+                        </div>
+
+                        <div class="package-desc">
+                            Launch your app in no time!<br>
+                            An MVP brings your idea to life, serving as the foundation for fundraising and user feedback. Accelerate your go-to-market with FlutterFlow.
+                        </div>
+                        <div class="feature-wrapper">
+
+                            <ul>
+                                <li>Fastest Choice</li>
+                                <li>Small Cost - Big Outcome</li>
+                                <li>Full Flutter Flow or Basic Flutter</li>
+                            </ul>
+
+                            <ul>
+                                <li>Firebase</li>
+                                <li>APK</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="ecom">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Custom</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="package-card" data-category="maintenance">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Web I</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="maintenance">
+                        
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Web II</div>
+                            <div class="price-wrapper">
+                                <div class="label">Starting From</div>
+                                <div class="price">2k €</div>
+                            </div>
+                        </div>
+
+                        <div class="package-desc">
+                            Launch your app in no time!<br>
+                            An MVP brings your idea to life, serving as the foundation for fundraising and user feedback. Accelerate your go-to-market with FlutterFlow.
+                        </div>
+                        <div class="feature-wrapper">
+
+                            <ul>
+                                <li>Fastest Choice</li>
+                                <li>Small Cost - Big Outcome</li>
+                                <li>Full Flutter Flow or Basic Flutter</li>
+                            </ul>
+
+                            <ul>
+                                <li>Firebase</li>
+                                <li>APK</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="maintenance">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Web III</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="maintenance">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Base Retainer</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="maintenance">
+                        
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Advance Retainer</div>
+                            <div class="price-wrapper">
+                                <div class="label">Starting From</div>
+                                <div class="price">2k €</div>
+                            </div>
+                        </div>
+
+                        <div class="package-desc">
+                            Launch your app in no time!<br>
+                            An MVP brings your idea to life, serving as the foundation for fundraising and user feedback. Accelerate your go-to-market with FlutterFlow.
+                        </div>
+                        <div class="feature-wrapper">
+
+                            <ul>
+                                <li>Fastest Choice</li>
+                                <li>Small Cost - Big Outcome</li>
+                                <li>Full Flutter Flow or Basic Flutter</li>
+                            </ul>
+
+                            <ul>
+                                <li>Firebase</li>
+                                <li>APK</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="package-card" data-category="maintenance">
+                        <div class="package-info-wrapper">
+                            <div class="package-name">Lent an FTE</div>
+                            <div class="price-wrapper">
+                                <div class="label">Scalable with Complexity</div>
+                                <div class="price">3.5k - 8.5K €</div>
+                            </div>
+                        </div>
+                        <div class="package-desc">
+                            Building the foundation that last forever! 
+                            Get a highly individual App with the best TechStack for mobile Apps. No need to be a Techie your self - we got you covered!
+                            Well carry your idea and roll it out to the client.
+                        </div>
+                        <div class="feature-wrapper">
+                            <ul>
+                                <li>Flexibility</li>
+                                <li>Rock-Solid Foundation</li>
+                                <li>Suitable for both Mobile and Web</li>
+                                <li>Deployment</li>
+                                <li>Adminboard</li>
+                            </ul>
+                            <ul>
+                                <li>Full Flutter</li>
+                                <li>Flutterflow on demand</li>
+                                <li>Firebase / Supabase</li>
+                                <li>Flutter Libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
 
         </div>
 
         <div class="footer page-section" data-theme="dark">
-            <div class="title">
+            <div class="title trigger-form" data-form="contact">
                 CONTACT US & <br>LET'S GET STARTED
                 <div class="icon-btn"><i class="fa-sharp fa-light fa-envelope"></i></div>
             </div>
@@ -183,29 +717,29 @@
             <div class="links-container">
                 <div class="pages-links">
                     <div class="header">STAGES</div>
-                    <div class="link"><a href="#">World Wide</a></div>
-                    <div class="link"><a href="#">Clients</a></div>
-                    <div class="link"><a href="#">Matchtest</a></div>
-                    <div class="link"><a href="#">Packages</a></div>
+                    <div class="link"><a href="/index.html#map-section">World Wide</a></div>
+                    <div class="link"><a href="/portfolio.html">Clients</a></div>
+                    <div class="link"><a href="/index.html#match-test-section">Matchtest</a></div>
+                    <div class="link"><a href="/services.html">Packages</a></div>
                 </div>
                 <div class="pages-links">
                     <div class="header">COMPANY</div>
-                    <div class="link"><a href="#">About us</a></div>
-                    <div class="link"><a href="#">Contact</a></div>
-                    <div class="link"><a href="#">Company</a></div>
+                    <div class="link"><a href="/index.html#team-section">About us</a></div>
+                    <div class="link"><a href="#" class="trigger-form" data-form="contact">Contact</a></div>
+                    <div class="link"><a href="/index.html#team-section">Company</a></div>
                 </div>
                 <div class="pages-links">
                     <div class="header">LEGAL</div>
                     <div class="link"><a href="#">Impressum</a></div>
-                    <div class="link"><a href="#">AGB</a></div>
+                    <div class="link"><a href="/AGB.html">AGB</a></div>
                     <div class="link"><a href="#">Privacy</a></div>
                 </div>
                 <div></div>
                 <div class="pages-links">
                     <div class="header">CONTACT</div>
-                    <div class="link">Lorem ipsum dolor sit amet consectetur. Amet cras in.</div>
-                    <div class="link">0000-000 000</div>
-                    <div class="link">info@gojicode.com</div>
+                    <div class="link">modi media <br>Maximilianstr. 44 <br>13187 Berlin Germany</div>
+                    <div class="link">+49 1731 968934</div>
+                    <div class="link">marius@lowcodelab.de</div>
                 </div>
             </div>
             <div class="separator"></div>

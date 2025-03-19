@@ -1,9 +1,47 @@
+
+
+
+
+
 /*---------- Toggle Navbar Visibility Start ----------*/
 $('.nav-items-toggle').on('click', function() {
     $('.top-nav').toggleClass('active');
     $('.nav-items-toggle i').toggleClass('fa-bars fa-xmark')
 });
 
+$(function() {
+    let savedLang = localStorage.getItem('lang');
+    if (!savedLang || !translations[savedLang]) {
+    savedLang = 'en';
+    localStorage.removeItem('lang');
+    }
+
+    setLanguage(savedLang);
+
+    $('.lang-btn').click(function() {
+    const chosen = $(this).data('lang');
+    if (translations[chosen] && chosen !== $('html').attr('lang')) {
+        setLanguage(chosen);
+        localStorage.setItem('lang', chosen);
+    }
+    });
+
+    function setLanguage(lang) {
+    $('html').attr('lang', lang);
+    document.title = translations[lang].pageTitle || '';
+    $('.lang-btn').removeClass('active')
+        .filter(`[data-lang="${lang}"]`)
+        .addClass('active');
+    $('[data-i18n]').each(function() {
+        const key = $(this).data('i18n');
+        $(this).html(translations[lang][key] || '');
+    });
+    }
+});
+  
+  
+  
+  
 
 
 
@@ -75,8 +113,47 @@ $(".form-input").click(function(){
         $c.addClass("active").find(".value").html(val)
     }
 });  
-  
 
+
+
+
+
+/*---------- Technologien Section Start ----------*/
+var swiper = new Swiper('.technologien-section .technologien-slider, .images-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    freeMode: true,
+    freeModeMomentum: false,
+    speed: 10000,
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+});
+$(function() {
+    $('.services-category.technologien-card').on('click', function() {
+    var $btn    = $(this);
+    var filter  = $btn.data('filter');
+    var isActive = $btn.hasClass('active');
+
+    // Remove “active” from all toggles
+    $('.services-category.technologien-card').removeClass('active');
+
+    if (isActive) {
+        // If we clicked the already‑active toggle → deactivate & show ALL cards
+        $('.technologien-slider .project-card').show();
+    } else {
+        // Otherwise activate this toggle
+        $btn.addClass('active');
+
+        // Hide all cards, then show only those whose data-category contains our filter
+        $('.technologien-slider .project-card')
+        .hide()
+        .filter('[data-category~="' + filter + '"]')
+        .show();
+    }
+    });
+});
 
 
 
@@ -155,51 +232,27 @@ var swiper = new Swiper('.swiper-container', {
     spaceBetween: 20,       // Adjust space between slides as needed
     freeMode: true,         // Enable free scrolling mode
 });
+$('.category-toggle').on('click', function() {
+    var filter = $(this).data('filter');
 
-$(".packages-wrapper .services-category").on("click", function() {
-    var $clicked = $(this);
-    var filter = $clicked.data("filter").toString().toLowerCase(); // e.g. "apps"
-    var $serviceCards = $(".service-card");
+    // 1️⃣ Toggle active class
+    $('.category-toggle').removeClass('active');
+    $('.category-toggle[data-filter="' + filter + '"]').addClass('active');
 
-    // If the clicked category is not active, apply the filter
-    if (!$clicked.hasClass("active")) {
-    // Remove 'active' from all categories, then add to the clicked one
-    $(".services-category").removeClass("active");
-    $clicked.addClass("active");
-
-    // Show/hide cards based on whether their data-category includes the filter
-    $serviceCards.each(function() {
-        var $card = $(this);
-        // Convert the card's categories into an array of trimmed, lowercase strings
-        var cardCategories = $card
-        .data("category")
-        .toString()
-        .toLowerCase()
-        .split(",")
-        .map(function(item) {
-            return item.trim();
-        });
-
-        // Show the card if it includes the selected filter; otherwise, hide it
-        if (cardCategories.includes(filter)) {
-        $card.show();
-        } else {
-        $card.hide();
-        }
-    });
-    } 
-    else {
-    // If the same category is clicked again, deactivate and show all cards
-    $clicked.removeClass("active");
-    $serviceCards.show();
+    // 2️⃣ Show/hide cards
+    if (filter === 'all') {
+    $('.package-card').show();
+    } else {
+    $('.package-card').hide()
+                        .filter('[data-category="' + filter + '"]')
+                        .show();
     }
-});  
+});
 
 
 
 
-
-/*---------- Services Page Start ----------*/
+/*---------- Project Page Start ----------*/
 var swiper = new Swiper('.portfolio-section .projects-slider, .images-container', {
     slidesPerView: 'auto',
     spaceBetween: 20,
@@ -257,4 +310,16 @@ $(".project-grid-section .services-category").on("click", function() {
     $clicked.removeClass("active");
     $serviceCards.show();
     }
-});  
+});
+
+
+
+
+
+/*---------- Contact Form Start ----------*/
+$(".trigger-form, .close-btn").on("click", function() {
+    var formValue = $(this).data("form");
+    $(".contact-form-container")
+    .toggleClass("active")
+    .attr("data-form", formValue);
+});

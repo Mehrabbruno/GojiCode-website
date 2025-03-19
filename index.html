@@ -33,9 +33,9 @@
             </div>
             <div class="cta-container">
                 <div class="lang-container">
-                    <div class="lang-btn active">DE</div>
+                    <div class="lang-btn" data-lang="de">DE</div>
                     <div>/</div>
-                    <div class="lang-btn">EN</div>
+                    <div class="lang-btn active" data-lang="en">EN</div>
                 </div>
                 <div class="btn-regular">CALL BUCHEN</div>
             </div>
@@ -44,22 +44,21 @@
     <!-- Navbar End -->
 
     <div class="main-wrapper sections-scroller">
-        
 
         <div class="sections-scroller">
-            <div class="cover-section page-section scroll-section" data-theme="light">
+            <div id="cover-section" class="cover-section page-section scroll-section" data-theme="light">
                 <img src="/public/assets/images/img-1.png"/>
 
                 <div class="section">
-                    <div class="header"> Fast. <span class="regular">Reliable.</span> Customized.</div>
-                    <div class="description">We help you grow your ideas.</div>
+                    <div class="header" data-i18n="coverHeader"></div>
+                    <div class="description" data-i18n="coverDescription">We help you grow your ideas.</div>
                 </div>
 
                 <div class="scroll-indicator"></div>
 
             </div>
 
-            <div class="team-section page-section scroll-section" data-theme="light">
+            <div id="team-section" class="team-section page-section scroll-section" data-theme="light">
                 <div class="team-left">
                     <div class="header">This is <span>Goji Code</span></div>
                     <div class="description">Your software agency with world wide operation</div>
@@ -74,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="map-section page-section scroll-section" data-theme="light">
+            <div id="map-section" class="map-section page-section scroll-section" data-theme="light">
                 <div class="map-container">
                     <div class="header">World-Wide Operation</div>
                     <div class="map">
@@ -88,15 +87,142 @@
                         <div>5<span>/Unique TechStacks</span></div>
                         <div>>80%<span>/Repeating Customer</span></div>
                     </div>
-                    <div class="btn-regular">
+                    <div class="btn-regular trigger-form" data-form="contact">
                         <span>Finde heraus wie dein <br>Projekt ein Standout wird </span>
                         <i class="fa-sharp fa-light fa-arrow-right"></i>
                     </div>
 
                 </div>
             </div>
+
+            <div id="technologien-section" class="technologien-section page-section scroll-section" data-theme="light">
+                
+                <div class="title-wrapper">
+                    <div class="title">Deine Ziele unsere <span>Expertise</span> Reliable -  Fast  - Scalable</div>
+                    <div class="services-filter-wrapper">
+                        <div class="services-category technologien-card" data-filter="apps">APPS</div>
+                        <div class="services-category technologien-card" data-filter="web">WEB</div>
+                        <div class="services-category technologien-card" data-filter="api">API</div>
+                        <div class="services-category technologien-card" data-filter="ecom">ECOM</div>
+                        <div class="services-category technologien-card" data-filter="design">DESIGN</div>
+                    </div>
+                </div>
+
+                <!-- Swiper container for the projects slider -->
+                <div class="technologien-slider swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <a href="/project-page.html" data-category="apps" class="swiper-slide project-card">
+                            <img src="/public/assets/images/logo-1.png">
+
+                            <div class="btn-circle"><i class="fa-light fa-arrow-right"></i></div>
+
+                            <div class="project-info-wrapper">
+                                <div class="section">
+                                    <div class="title">TopDog</div>
+                                    <div class="desc">Lorem ipsum dolor sit amet consectetur. Tincidunt id et adipiscing eu. Faucibus at sed id tortor auctor sit risus morbi. Lorem mi tortor nibh integer turpis id facilisi sagittis. Duis odio enim enim id. Nibh.</div>
+                                </div>
+                                <div class="tech-stack">
+                                    Flutter / FlutterFlow / AWS / Firebase / Supabase
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/project-page.html" data-category="web" class="swiper-slide project-card">
+                            <img src="/public/assets/images/logo-1.png">
+
+                            <div class="btn-circle"><i class="fa-light fa-arrow-right"></i></div>
+
+                            <div class="project-info-wrapper">
+                                <div class="section">
+                                    <div class="title">TopDog</div>
+                                    <div class="desc">Lorem ipsum dolor sit amet consectetur. Tincidunt id et adipiscing eu. Faucibus at sed id tortor auctor sit risus morbi. Lorem mi tortor nibh integer turpis id facilisi sagittis. Duis odio enim enim id. Nibh.</div>
+                                </div>
+                                <div class="tech-stack">
+                                    Flutter / FlutterFlow / AWS / Firebase / Supabase
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/project-page.html" data-category="api" class="swiper-slide project-card">
+                            <img src="/public/assets/images/logo-1.png">
+
+                            <div class="btn-circle"><i class="fa-light fa-arrow-right"></i></div>
+
+                            <div class="project-info-wrapper">
+                                <div class="section">
+                                    <div class="title">TopDog</div>
+                                    <div class="desc">Lorem ipsum dolor sit amet consectetur. Tincidunt id et adipiscing eu. Faucibus at sed id tortor auctor sit risus morbi. Lorem mi tortor nibh integer turpis id facilisi sagittis. Duis odio enim enim id. Nibh.</div>
+                                </div>
+                                <div class="tech-stack">
+                                    Flutter / FlutterFlow / AWS / Firebase / Supabase
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/project-page.html" data-category="ecom" class="swiper-slide project-card">
+                            <img src="/public/assets/images/logo-1.png">
+
+                            <div class="btn-circle"><i class="fa-light fa-arrow-right"></i></div>
+
+                            <div class="project-info-wrapper">
+                                <div class="section">
+                                    <div class="title">TopDog</div>
+                                    <div class="desc">Lorem ipsum dolor sit amet consectetur. Tincidunt id et adipiscing eu. Faucibus at sed id tortor auctor sit risus morbi. Lorem mi tortor nibh integer turpis id facilisi sagittis. Duis odio enim enim id. Nibh.</div>
+                                </div>
+                                <div class="tech-stack">
+                                    Flutter / FlutterFlow / AWS / Firebase / Supabase
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/project-page.html" data-category="design" class="swiper-slide project-card">
+                            <img src="/public/assets/images/logo-1.png">
+
+                            <div class="btn-circle"><i class="fa-light fa-arrow-right"></i></div>
+
+                            <div class="project-info-wrapper">
+                                <div class="section">
+                                    <div class="title">TopDog</div>
+                                    <div class="desc">Lorem ipsum dolor sit amet consectetur. Tincidunt id et adipiscing eu. Faucibus at sed id tortor auctor sit risus morbi. Lorem mi tortor nibh integer turpis id facilisi sagittis. Duis odio enim enim id. Nibh.</div>
+                                </div>
+                                <div class="tech-stack">
+                                    Flutter / FlutterFlow / AWS / Firebase / Supabase
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/project-page.html" data-category="ecom" class="swiper-slide project-card">
+                            <img src="/public/assets/images/logo-1.png">
+
+                            <div class="btn-circle"><i class="fa-light fa-arrow-right"></i></div>
+
+                            <div class="project-info-wrapper">
+                                <div class="section">
+                                    <div class="title">TopDog</div>
+                                    <div class="desc">Lorem ipsum dolor sit amet consectetur. Tincidunt id et adipiscing eu. Faucibus at sed id tortor auctor sit risus morbi. Lorem mi tortor nibh integer turpis id facilisi sagittis. Duis odio enim enim id. Nibh.</div>
+                                </div>
+                                <div class="tech-stack">
+                                    Flutter / FlutterFlow / AWS / Firebase / Supabase
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/project-page.html" data-category="api" class="swiper-slide project-card">
+                            <img src="/public/assets/images/logo-1.png">
+
+                            <div class="btn-circle"><i class="fa-light fa-arrow-right"></i></div>
+
+                            <div class="project-info-wrapper">
+                                <div class="section">
+                                    <div class="title">TopDog</div>
+                                    <div class="desc">Lorem ipsum dolor sit amet consectetur. Tincidunt id et adipiscing eu. Faucibus at sed id tortor auctor sit risus morbi. Lorem mi tortor nibh integer turpis id facilisi sagittis. Duis odio enim enim id. Nibh.</div>
+                                </div>
+                                <div class="tech-stack">
+                                    Flutter / FlutterFlow / AWS / Firebase / Supabase
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
             
-            <div class="match-test-section page-section scroll-section" style="margin-top: 10px;" data-theme="dark">
+            <div id="match-test-section" class="match-test-section page-section scroll-section" style="margin-top: 10px;" data-theme="dark">
 
                 <div class="form-steps-container">
                     <div class="form-step" data-match-category="company-type">
@@ -187,7 +313,7 @@
                     <div class="form-step">                          
                         <div class="title-wrapper">
                             <div class="header">Review & Submit</div>
-                            <div class="btn-regular">SUBMIT</div>
+                            <div class="btn-regular trigger-form" data-form="match">SUBMIT</div>
                         </div>
                         <div class="form-inputs-container">
                             <div class="form-value" data-match-category="company-type">
@@ -243,7 +369,7 @@
             </div>
             
             <div class="footer page-section scroll-section" data-theme="dark">
-                <div class="title">
+                <div class="title trigger-form" data-form="contact">
                     CONTACT US & <br>LET'S GET STARTED
                     <div class="icon-btn"><i class="fa-sharp fa-light fa-envelope"></i></div>
                 </div>
@@ -251,29 +377,29 @@
                 <div class="links-container">
                     <div class="pages-links">
                         <div class="header">STAGES</div>
-                        <div class="link"><a href="#">World Wide</a></div>
-                        <div class="link"><a href="#">Clients</a></div>
-                        <div class="link"><a href="#">Matchtest</a></div>
-                        <div class="link"><a href="#">Packages</a></div>
+                        <div class="link"><a href="/index.html#map-section">World Wide</a></div>
+                        <div class="link"><a href="/portfolio.html">Clients</a></div>
+                        <div class="link"><a href="/index.html#match-test-section">Matchtest</a></div>
+                        <div class="link"><a href="/services.html">Packages</a></div>
                     </div>
                     <div class="pages-links">
                         <div class="header">COMPANY</div>
-                        <div class="link"><a href="#">About us</a></div>
-                        <div class="link"><a href="#">Contact</a></div>
-                        <div class="link"><a href="#">Company</a></div>
+                        <div class="link"><a href="/index.html#team-section">About us</a></div>
+                        <div class="link"><a href="#" class="trigger-form" data-form="contact">Contact</a></div>
+                        <div class="link"><a href="/index.html#team-section">Company</a></div>
                     </div>
                     <div class="pages-links">
                         <div class="header">LEGAL</div>
                         <div class="link"><a href="#">Impressum</a></div>
-                        <div class="link"><a href="#">AGB</a></div>
+                        <div class="link"><a href="/AGB.html">AGB</a></div>
                         <div class="link"><a href="#">Privacy</a></div>
                     </div>
                     <div></div>
                     <div class="pages-links">
                         <div class="header">CONTACT</div>
-                        <div class="link">Lorem ipsum dolor sit amet consectetur. Amet cras in.</div>
-                        <div class="link">0000-000 000</div>
-                        <div class="link">info@gojicode.com</div>
+                        <div class="link">modi media <br>Maximilianstr. 44 <br>13187 Berlin Germany</div>
+                        <div class="link">+49 1731 968934</div>
+                        <div class="link">marius@lowcodelab.de</div>
                     </div>
                 </div>
                 <div class="separator"></div>
@@ -282,16 +408,38 @@
                     <div><a href="#">Privacy Policy</a></div>
                 </div>
             </div>
-        
         </div>
         
+    </div>
+
+    <div class="contact-form-container" data-form="">
+            
+        <div class="title-wrapper">
+            Thank you for your interest <i class="fa-light fa-face-smile"></i> We'll get in touch with you asap
+        </div>
+        <div class="form-wrapper">
+            <div>
+                <div class="input-group">
+                    <input placeholder="Email" type="email" name="email">
+                    <input placeholder="Subject" type="text" name="subject">
+                </div>
+                <textarea placeholder="Message"></textarea>
+            </div>
+            <div class="submit-button">
+                <i class="fa-light fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <div class="close-btn"><i class="fa-light fa-xmark"></i></div>
+
     </div>
     
 
     <!-- JS Script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/public/js/main.js"></script>
+    <script src="public/js/translations.js"></script>
+    <script src="public/js/main.js"></script>
 
 </body>
 
