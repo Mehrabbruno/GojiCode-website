@@ -119,41 +119,68 @@ $(".form-input").click(function(){
 
 
 /*---------- Technologien Section Start ----------*/
-var swiper = new Swiper('.technologien-section .technologien-slider, .images-container', {
+// 1️⃣ Initialize Swiper correctly
+var technologien_swiper = new Swiper('.technologien-slider', {
     slidesPerView: 'auto',
     spaceBetween: 20,
     freeMode: true,
     freeModeMomentum: false,
-    speed: 10000,
+    speed: 100000,
     autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-    },
-});
-$(function() {
-    $('.services-category.technologien-card').on('click', function() {
+      delay: 0,
+      disableOnInteraction: false
+    }
+  });
+  
+  // 2️⃣ Helper: start/stop autoplay based on visible slide count
+  function updateSwiperAutoplay() {
+    technologien_swiper.update(); // recalc layout after hiding/showing slides
+
+    // Sum widths of all currently visible slides (including margin)
+    let totalWidth = 0;
+    $('.technologien-slider .swiper-slide:visible').each(function() {
+        totalWidth += $(this).outerWidth(true);
+    });
+
+    const marginLeft = 60;
+  const containerWidth = $('.technologien-slider').width() - marginLeft;
+
+    if (totalWidth > containerWidth) {
+        technologien_swiper.autoplay.start();
+    } else {
+        technologien_swiper.autoplay.stop();
+    }
+  }
+  
+  // 3️⃣ Run on initial load
+  updateSwiperAutoplay();
+  $(window).on('resize', updateSwiperAutoplay);
+  
+// 4️⃣ Filter‑click handler
+$('.services-category.technologien-card').on('click', function() {
+    
     var $btn    = $(this);
     var filter  = $btn.data('filter');
     var isActive = $btn.hasClass('active');
 
-    // Remove “active” from all toggles
     $('.services-category.technologien-card').removeClass('active');
 
     if (isActive) {
-        // If we clicked the already‑active toggle → deactivate & show ALL cards
-        $('.technologien-slider .project-card').show();
+    // deactivate → show all
+    $('.technologien-slider .swiper-slide').show();
     } else {
-        // Otherwise activate this toggle
-        $btn.addClass('active');
-
-        // Hide all cards, then show only those whose data-category contains our filter
-        $('.technologien-slider .project-card')
+    $btn.addClass('active');
+    $('.technologien-slider .swiper-slide')
         .hide()
-        .filter('[data-category~="' + filter + '"]')
+        .filter(`[data-category="${filter}"]`)
         .show();
     }
-    });
+    
+
+    updateSwiperAutoplay();
+    
 });
+  
 
 
 

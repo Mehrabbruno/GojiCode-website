@@ -512,7 +512,7 @@ a {
   padding-top: 100px;
   padding-inline: 20px;
   padding-bottom: 20px;
-  height: max-content;
+  height: max-content !important;
   margin-top: 200px;
 }
 .team-section * {
