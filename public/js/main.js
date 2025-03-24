@@ -81,6 +81,61 @@ $(function() {
 
 
 
+/*---------- Map Drag and Tooltip Start ----------*/
+$(function(){
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let currentX = 0, currentY = 0;
+
+    const $svg = $('#map');
+    const $pan = $('#panGroup');
+
+    // On mouse/touch start
+    $svg.on('mousedown touchstart', function(e) {
+    e.preventDefault();
+    isDragging = true;
+    const evt = e.type === 'touchstart' ? e.originalEvent.touches[0] : e;
+    startX = evt.clientX - currentX;
+    startY = evt.clientY - currentY;
+    });
+
+    // On move
+    $(document).on('mousemove touchmove', function(e) {
+    if (!isDragging) return;
+    const evt = e.type === 'touchmove' ? e.originalEvent.touches[0] : e;
+    currentX = evt.clientX - startX;
+    currentY = evt.clientY - startY;
+    $pan.attr('transform', `translate(${currentX},${currentY})`);
+    });
+
+    // On release
+    $(document).on('mouseup touchend', function() {
+    isDragging = false;
+    });
+});
+
+$(function(){
+    const $tooltip = $('#tooltip');
+    $('.project-country')
+    .on('mouseenter', function() {
+    const rect = this.getBoundingClientRect();
+    const left = rect.left + rect.width/2 + window.scrollX;
+    const top  = rect.top  + rect.height + window.scrollY;
+
+    $tooltip
+        .text('Country info goes here')
+        .css({ left, top })
+        .show();
+    })
+    .on('mouseleave', function() {
+    $tooltip.hide();
+    });
+});
+
+
+
+
+
 /*---------- Match Test Form Start ----------*/
 let i = 0, max = 4;
 const update = (i) => {

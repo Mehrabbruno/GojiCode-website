@@ -575,7 +575,19 @@ a {
   align-items: center;
   height: 500px;
 }
+.map-section .map-container #tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  z-index: 9999;
+  transform: translate(-80%, -80px);
+}
 .map-section .map-container .header {
+  pointer-events: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -594,6 +606,16 @@ a {
 .map-section .map-container .map img {
   height: 100%;
   width: 150%;
+}
+.map-section .map-container .map svg {
+  cursor: grab;
+  user-select: none;
+}
+.map-section .map-container .map svg .project-country {
+  cursor: pointer;
+}
+.map-section .map-container .map svg:active {
+  cursor: grabbing;
 }
 .map-section .info-wrapper {
   display: flex;
