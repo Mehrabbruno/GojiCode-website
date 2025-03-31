@@ -210,9 +210,12 @@ a{
     color: var(--cl-1);
     max-width: 1920px;
     margin-inline: auto;
-    background: rgba(0, 0, 0, 0.01);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    &.glossy{
+        transition: .2s;
+        background: rgba(0, 0, 0, 0.01);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
     .nav-main{
         display: flex;
         justify-content: space-between;
@@ -249,6 +252,11 @@ a{
             .nav-item:hover{
                 font-style: italic;
                 color: var(--ac-1);
+            }
+            .nav-item.active{
+                font-style: italic;
+                color: var(--ac-1);
+                font-weight: 400;
             }
         }
         .lang-container{
@@ -435,15 +443,41 @@ a{
         height: 500px;
 
         #tooltip {
-            background: rgba(255,255,255,0.95);
-            border: 1px solid #ccc;
+            position: relative;
+            background: var(--cl-14);
+            border: 1px solid var(--cl-12);
             padding: 8px;
-            font-size: 14px;
+            padding-right: 10px;
             border-radius: 4px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 20px -10px var(--cl-9);
             white-space: nowrap;
             z-index: 9999;
             transform: translate(-80%, -80px);
+            pointer-events: none;
+            max-height: 200px;
+            overflow-y: scroll;
+            ul{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                gap: 10px;
+                display: flex;
+                flex-direction: column;
+                li{
+                    // margin-bottom: 10px;
+                    text-transform: capitalize;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+            }
+            a{
+                pointer-events: auto;
+                cursor: pointer !important;
+                &:hover{
+                    color: var(--ac-1);
+                    font-style: italic !important;
+                }
+            }
         }
           
 
@@ -821,9 +855,11 @@ a{
     padding: 20px;
     box-sizing: border-box;
     background-color: var(--cl-7);
-    height: max-content;
+    height: 100vh;
+    padding-bottom: 10px;
+
     .title{
-        margin: 200px 0;
+        margin: 180px 0;
         font-size: 50px;
         font-weight: 300;
         color: var(--cl-14);

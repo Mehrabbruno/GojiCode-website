@@ -81,6 +81,22 @@ $(function() {
 
 
 
+/*---------- Toggling Navbar Glossy Start ----------*/
+$(function() {
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 0) {
+            $('.top-nav').addClass('glossy');
+        } else {
+            $('.top-nav').removeClass('glossy');
+        }
+    });
+});
+
+
+
+
+
+
 /*---------- Map Drag and Tooltip Start ----------*/
 $(function(){
     let isDragging = false;
@@ -114,23 +130,49 @@ $(function(){
     });
 });
 
+// Global object with detailed data
+const projectTooltips = {
+    projects_1: '<ul><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a></ul>',
+    projects_2: '<ul><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a></ul>',
+    projects_3: '<ul><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a></ul>',
+    projects_4: '<ul><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a></ul>',
+    projects_5: '<ul><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a></ul>',
+    projects_6: '<ul><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a></ul>',
+    projects_7: '<ul><a href="technologien.html"><li>Project Name</li></a><a href="technologien.html"><li>Project Name</li></a></ul>'
+};
+
+$(function() {
+    $('.project-country').each(function() {
+        const projectId = $(this).data('project-id');
+        const content = projectTooltips[projectId] || '';
+        
+        const $temp = $(content);
+        const count = $temp.find('li').length;
+        const scaleFactor = 1 + (count * 0.1);
+        const cx = bbox.x + bbox.width / 2;
+        const cy = bbox.y + bbox.height / 2;
+        const transformStr = `translate(${cx}, ${cy}) scale(${scaleFactor}) translate(${-cx}, ${-cy})`;
+        $(this).attr('transform', transformStr);
+    });
+});
+
+
 $(function(){
     const $tooltip = $('#tooltip');
     $('.project-country')
-    .on('mouseenter', function() {
-    const rect = this.getBoundingClientRect();
-    const left = rect.left + rect.width/2 + window.scrollX;
-    const top  = rect.top  + rect.height + window.scrollY;
-
-    $tooltip
-        .text('Country info goes here')
-        .css({ left, top })
-        .show();
-    })
-    .on('mouseleave', function() {
-    $tooltip.hide();
-    });
+        .on('mouseenter', function() {
+            const rect = this.getBoundingClientRect();
+            const left = rect.left + rect.width / 2 + window.scrollX;
+            const top  = rect.top + rect.height + window.scrollY;
+            const projectId = $(this).data('project-id');
+            const content = projectTooltips[projectId] || 'Default info goes here';
+            $tooltip
+                .html(content)
+                .css({ left, top })
+                .show();
+        })
 });
+  
 
 
 
@@ -174,67 +216,62 @@ $(".form-input").click(function(){
 
 
 /*---------- Technologien Section Start ----------*/
-// 1️⃣ Initialize Swiper correctly
-var technologien_swiper = new Swiper('.technologien-slider', {
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    freeMode: true,
-    freeModeMomentum: false,
-    speed: 100000,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false
-    }
-  });
-  
-  // 2️⃣ Helper: start/stop autoplay based on visible slide count
-  function updateSwiperAutoplay() {
-    technologien_swiper.update(); // recalc layout after hiding/showing slides
-
-    // Sum widths of all currently visible slides (including margin)
-    let totalWidth = 0;
-    $('.technologien-slider .swiper-slide:visible').each(function() {
-        totalWidth += $(this).outerWidth(true);
+if ($('.technologien-slider').length) {
+    var technologien_swiper = new Swiper('.technologien-slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        freeMode: true,
+        freeModeMomentum: false,
+        speed: 100000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false
+        }
     });
 
-    const marginLeft = 60;
-  const containerWidth = $('.technologien-slider').width() - marginLeft;
+    function updateSwiperAutoplay() {
+        technologien_swiper.update(); // recalc layout after hiding/showing slides
 
-    if (totalWidth > containerWidth) {
-        technologien_swiper.autoplay.start();
-    } else {
-        technologien_swiper.autoplay.stop();
+        // Sum widths of all currently visible slides (including margin)
+        let totalWidth = 0;
+        $('.technologien-slider .swiper-slide:visible').each(function() {
+            totalWidth += $(this).outerWidth(true);
+        });
+
+        const marginLeft = 60;
+        const containerWidth = $('.technologien-slider').width() - marginLeft;
+
+        if (totalWidth > containerWidth) {
+            technologien_swiper.autoplay.start();
+        } else {
+            technologien_swiper.autoplay.stop();
+        }
     }
-  }
-  
-  // 3️⃣ Run on initial load
-  updateSwiperAutoplay();
-  $(window).on('resize', updateSwiperAutoplay);
-  
-// 4️⃣ Filter‑click handler
-$('.services-category.technologien-card').on('click', function() {
-    
-    var $btn    = $(this);
-    var filter  = $btn.data('filter');
-    var isActive = $btn.hasClass('active');
-
-    $('.services-category.technologien-card').removeClass('active');
-
-    if (isActive) {
-    // deactivate → show all
-    $('.technologien-slider .swiper-slide').show();
-    } else {
-    $btn.addClass('active');
-    $('.technologien-slider .swiper-slide')
-        .hide()
-        .filter(`[data-category="${filter}"]`)
-        .show();
-    }
-    
 
     updateSwiperAutoplay();
-    
-});
+    $(window).on('resize', updateSwiperAutoplay);
+
+    $('.services-category.technologien-card').on('click', function() {
+        var $btn    = $(this);
+        var filter  = $btn.data('filter');
+        var isActive = $btn.hasClass('active');
+
+        $('.services-category.technologien-card').removeClass('active');
+
+        if (isActive) {
+            // Deactivate → show all
+            $('.technologien-slider .swiper-slide').show();
+        } else {
+            $btn.addClass('active');
+            $('.technologien-slider .swiper-slide')
+                .hide()
+                .filter(`[data-category="${filter}"]`)
+                .show();
+        }
+        updateSwiperAutoplay();
+    });
+}
+  
   
 
 
