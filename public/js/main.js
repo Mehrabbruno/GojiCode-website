@@ -144,6 +144,7 @@ const projectTooltips = {
 $(function() {
     $('.project-country').each(function() {
         const projectId = $(this).data('project-id');
+        const bbox = this.getBBox(); 
         const content = projectTooltips[projectId] || '';
         
         const $temp = $(content);

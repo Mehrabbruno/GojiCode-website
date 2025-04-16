@@ -462,6 +462,8 @@ a {
   height: 100vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  scrollbar-width: none !important;
+  -webkit-scrollbar-width: none !important;
 }
 .sections-scroller * {
   transition: 0.2s;
@@ -581,7 +583,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 50%;
 }
 .map-section .map-container #tooltip {
   position: relative;
@@ -988,20 +990,16 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   transition: 0.2s;
   font-size: 22px;
   color: var(--ac-1);
-}
-.footer .title:hover .icon-btn {
-  opacity: 1;
-  pointer-events: none;
 }
 .footer .separator {
   height: 2px;
   width: 100%;
   background-color: var(--cl-8);
-  margin: 20px 0;
+  margin: 0;
 }
 .footer .links-container {
   display: grid;
@@ -1352,6 +1350,14 @@ a {
 .portfolio-section {
   margin-top: 100px;
 }
+.portfolio-section .page-section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-x: hidden;
+  height: calc(100vh - 100px);
+  min-height: max-content;
+}
 .portfolio-section .cover-section-wrapper {
   display: grid;
   grid-template: "section-1 section-2" "section-3 section-3";
@@ -1393,11 +1399,11 @@ a {
 }
 .portfolio-section .projects-slider {
   height: max-content;
-  margin-top: 20px;
+  margin: 40px 0;
 }
 .portfolio-section .projects-slider .project-card {
-  max-width: 200px;
-  height: 100px;
+  max-width: 300px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1418,7 +1424,7 @@ a {
   filter: brightness(1.1);
 }
 .portfolio-section .projects-slider .project-card img {
-  width: 200px;
+  width: 300px;
 }
 .portfolio-section .project-grid-section {
   background-color: var(--cl-7);
@@ -2020,7 +2026,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding-inline: 60px;
+    padding-inline: 20px;
   }
   .cover-section .section {
     width: 100%;
@@ -2056,7 +2062,8 @@ a {
     align-items: flex-end;
     flex-direction: row;
     gap: 40px;
-    padding: 60px;
+    padding: 20px;
+    height: 100vh !important;
   }
   .team-section * {
     flex-grow: 1fr;
@@ -2088,7 +2095,7 @@ a {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 40px 60px;
+    padding: 40px 20px;
     padding-top: 100px;
   }
   .map-section .map-container {
@@ -2126,7 +2133,7 @@ a {
     padding: 40px 0px;
   }
   .technologien-section > .title-wrapper {
-    padding-inline: 60px;
+    padding-inline: 20px;
   }
   .technologien-section > .title-wrapper .title {
     font-size: 48px;
@@ -2173,8 +2180,12 @@ a {
     filter: brightness(1.2);
   }
   .footer {
-    padding: 20px 60px;
+    padding: 20px 20px;
     box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
   .footer .title {
     font-size: 76px;
@@ -2206,7 +2217,7 @@ a {
     font-weight: 500;
   }
   .packages-wrapper {
-    padding-inline: 60px;
+    padding-inline: 20px;
   }
   .packages-wrapper > .title-wrapper {
     flex-direction: row;
@@ -2251,7 +2262,7 @@ a {
   }
   .portfolio-section .project-grid-section {
     padding-top: 100px !important;
-    padding-inline: 60px;
+    padding-inline: 20px;
     margin-top: 100px;
   }
   .portfolio-section .project-grid-section > .title-wrapper {
@@ -2269,7 +2280,7 @@ a {
     font-weight: 400;
   }
   .project-page .project-cover-section {
-    padding-inline: 60px;
+    padding-inline: 20px;
   }
   .project-page .project-cover-section .cover-wrapper .title {
     font-size: 48px;
@@ -2280,13 +2291,13 @@ a {
     border-radius: 8px;
   }
   .project-page .project-detail-wrapper .project-info-container {
-    padding-inline: 60px;
+    padding-inline: 20px;
   }
   .project-page .project-detail-wrapper .project-info-container .project-description {
     flex: 2;
   }
   .project-page .project-detail-wrapper .milestone-wrapper {
-    padding-inline: 60px;
+    padding-inline: 20px;
   }
   .contact-form-container {
     padding: 40px;

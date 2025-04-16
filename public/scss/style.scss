@@ -316,6 +316,8 @@ a{
     height: 100vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    scrollbar-width: none !important;
+    -webkit-scrollbar-width: none !important;
 
     *{
         transition: 0.2s;
@@ -440,7 +442,7 @@ a{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 500px;
+        height: 50%;
 
         #tooltip {
             position: relative;
@@ -877,23 +879,23 @@ a{
             display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 0;
+            opacity: 1;
             transition: .2s;
             font-size: 22px;
             color: var(--ac-1);
         }
-        &:hover{
-            .icon-btn{
-                opacity: 1;
-                pointer-events: none;
-            }
-        }
+        // &:hover{
+        //     .icon-btn{
+        //         opacity: 1;
+        //         pointer-events: none;
+        //     }
+        // }
     }
     .separator{
         height: 2px;
         width: 100%;
         background-color: var(--cl-8);
-        margin: 20px 0;
+        margin: 0;
     }
     .links-container{
         display: grid;
@@ -1286,6 +1288,15 @@ a{
 .portfolio-section{
     margin-top: 100px;
 
+    .page-section:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow-x: hidden;
+        height: calc(100vh - 100px);
+        min-height: max-content;
+    }
+
     .cover-section-wrapper{
         display: grid;
         grid-template: 
@@ -1333,10 +1344,10 @@ a{
 
     .projects-slider{
         height: max-content;
-        margin-top: 20px;
+        margin: 40px 0;
         .project-card{
-            max-width: 200px;
-            height: 100px;
+            max-width: 300px;
+            height: 150px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1356,7 +1367,7 @@ a{
                 filter: brightness(1.1);
             }
             img{
-                width: 200px;
+                width: 300px;
             }
         }
     }
@@ -2079,7 +2090,7 @@ a{
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        padding-inline: 60px;
+        padding-inline: 20px;
         
         .section{
             width: 100%;
@@ -2117,7 +2128,8 @@ a{
         align-items: flex-end;
         flex-direction: row;
         gap: 40px;
-        padding: 60px;
+        padding: 20px;
+        height: 100vh !important;
         *{flex-grow: 1fr;}
         .team-left{
             align-self: flex-end;
@@ -2147,7 +2159,7 @@ a{
         display: flex;
         flex-direction: column;
         height: 100vh;
-        padding: 40px 60px;
+        padding: 40px 20px;
         padding-top: 100px;
         .map-container{
             flex-grow: 1;
@@ -2184,7 +2196,7 @@ a{
     .technologien-section{
         padding: 40px 0px;
         >.title-wrapper{
-            padding-inline: 60px;
+            padding-inline: 20px;
             .title{
                 font-size: 48px;
             }
@@ -2233,8 +2245,12 @@ a{
     }
 
     .footer{
-        padding: 20px 60px;
+        padding: 20px 20px;
         box-sizing: border-box;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         .title{
             font-size: 76px;
             margin-bottom: 100px;
@@ -2270,7 +2286,7 @@ a{
     }
 
     .packages-wrapper{
-        padding-inline: 60px;
+        padding-inline: 20px;
 
         >.title-wrapper{
             flex-direction: row;
@@ -2326,7 +2342,7 @@ a{
     .portfolio-section{
         .project-grid-section{
             padding-top: 100px !important;
-            padding-inline: 60px;
+            padding-inline: 20px;
             margin-top: 100px;
             >.title-wrapper{
                 flex-direction: row;
@@ -2349,7 +2365,7 @@ a{
     .project-page{
         
         .project-cover-section{
-            padding-inline: 60px;
+            padding-inline: 20px;
             .cover-wrapper{
                 .title{
                     font-size: 48px;
@@ -2365,13 +2381,13 @@ a{
         .project-detail-wrapper{
          
             .project-info-container{
-                padding-inline: 60px;
+                padding-inline: 20px;
                 .project-description{
                     flex: 2;
                 }
             }
             .milestone-wrapper{
-                padding-inline: 60px;
+                padding-inline: 20px;
             }
         }
 
