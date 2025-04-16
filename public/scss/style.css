@@ -999,7 +999,7 @@ a {
   height: 2px;
   width: 100%;
   background-color: var(--cl-8);
-  margin: 0;
+  margin: 15px 0;
 }
 .footer .links-container {
   display: grid;
@@ -1639,10 +1639,10 @@ a {
   position: fixed;
   padding: 20px;
   z-index: 10;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
+  top: 2%;
+  left: 2%;
+  height: 96%;
+  width: 96%;
   font-weight: 300;
   background-color: var(--ac-1);
 }
